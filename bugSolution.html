@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      let div = document.getElementById("myDiv");
+      div.style.display = "none";
+      // Correct approach: re-append the div to its parent
+      div.parentNode.appendChild(div);
+    }
+  </script>
+</body>
+</html>
